@@ -1,0 +1,6 @@
+spring:
+  profiles: dev
+aaa:
+  bbb: 127.0.0.1
+  ccc: asdf
+  ddd: 12345

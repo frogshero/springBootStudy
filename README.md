@@ -36,6 +36,20 @@ public MyBean(ApplicationArguments args)
 profile配置：
 application-{profile}.properties
 @ActiveProfiles("test")
+spring.profiles.active=test
 
+my:
+servers:
+	- dev.example.com
+	- another.example.com
+The preceding example would be transformed into these properties:
+my.servers[0]=dev.example.com
+my.servers[1]=another.example.com
+@ConfigurationProperties(prefix="my")
+public class Config {
+	private List<String> servers = new ArrayList<String>();
 
+property对象
+@ConfigurationProperties(prefix="aaa")
+@EnableConfigurationProperties(MyProperties.class)
 -------------------

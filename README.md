@@ -11,4 +11,5 @@ https://github.com/spring-projects/spring-boot/blob/v2.0.3.RELEASE/spring-boot-p
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 
+test1345
 -------------------

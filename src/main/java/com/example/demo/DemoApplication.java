@@ -3,6 +3,7 @@ package com.example.demo;
 import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -25,10 +26,13 @@ public class DemoApplication {
 	@Autowired
 	private MyProperties prop;
 	
+	@Value("${customevalue1}")
+	private String customevalue1;
+	
 	@GetMapping("/aa")
 	public String getA() {
 		//MyProperties prop = getProp();
-		return prop.getBbb() + prop.getCcc() + prop.getDdd();
+		return prop.getBbb() + prop.getCcc() + prop.getDdd() + customevalue1;
 	}
 }
 

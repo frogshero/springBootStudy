@@ -1,4 +1,17 @@
-BeanPostProcessor例子
+SpringBoot初始化
+SpringApplication.run
+    prepareEnvironment    
+    prepareContext
+        context.setEnvironment(environment)
+        applyInitializers       <--------
+    refreshContext
+        AbstractApplicationContext.postProcessBeanFactory
+        invokeBeanFactoryPostProcessors  <--------
+        registerBeanPostProcessors
+
+ContextInitializer, BeanFactoryProcessor, BeanPostProcessor(在populateBean时使用)例子
+
+
 
 用spring-boot-maven-plugin打包
 set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_101

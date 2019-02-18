@@ -13,12 +13,12 @@ import org.springframework.util.ReflectionUtils;
 import java.beans.PropertyDescriptor;
 
 /**
- * ComponentTest           : -------------------contructor
- * BeanPostProcessorTest   : -------------------postProcessPropertyValues          ？？？
- * BeanPostProcessorTest   : -------------------postProcessBeforeInitialization
- * ComponentTest           : -------------------init
- * ComponentTest           : -------------------afterPropertiesSet
- * BeanPostProcessorTest   : -------------------postProcessAfterInitialization
+ * ComponentTest           : -------contructor
+ * BeanPostProcessorTest   : -------postProcessPropertyValues  (处理各种注解@Autowire,@Value,如CommonAnnotationBeanPostProcessor)
+ * BeanPostProcessorTest   : -------postProcessBeforeInitialization
+ * ComponentTest           : -------init
+ * ComponentTest           : -------afterPropertiesSet
+ * BeanPostProcessorTest   : -------postProcessAfterInitialization
  */
 
 //@Component  不在搜索路径，用这个不能实例化，而通过ApplicationInitializer=>BeanFactoryPostProcessor实例化

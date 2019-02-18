@@ -1,9 +1,11 @@
 package com.example.demo;
 
 import java.util.Collections;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -37,8 +39,17 @@ public class DemoApplication {
 	@GetMapping("/aa")
 	public String getA() {
 		// MyProperties prop = getProp();
-		return prop.getBbb() + prop.getCcc() + prop.getDdd() + c.getCustomevalue1();
+		//return prop.getBbb() + prop.getCcc() + prop.getDdd() + c.getCustomevalue1();
+		return c.getCustomevalue1() + c.getCustomevalue2() + c.getCustomevalue3();
 	}
 
 
+	@GetMapping("/bb")
+	public String getB() throws IllegalAccessException {
+		for (Map.Entry<String, SpringValue> e : DynamicMyPropRegistry.getInstance().getItems().entries()) {
+			SpringValue sv = e.getValue();
+			sv.getFld().set(sv.getBean(), sv.getFld().get(sv.getBean()) + "UUUU");
+		}
+		return "OK";
+	}
 }

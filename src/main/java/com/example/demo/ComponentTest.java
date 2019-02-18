@@ -21,7 +21,15 @@ public class ComponentTest implements InitializingBean {
 	@DynamicMyProp
 	@Value("${customevalue1}")
 	private String customevalue1;
-	
+
+	@DynamicMyProp
+	@Value("${customevalue2}")
+	private String customevalue2;
+
+	@DynamicMyProp
+	@Value("${customevalue3}")
+	private String customevalue3;
+
 	@PostConstruct
 	public void init() {
 		log.info("-------------------init");

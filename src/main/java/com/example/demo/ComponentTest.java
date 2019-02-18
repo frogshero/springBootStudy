@@ -2,6 +2,7 @@ package com.example.demo;
 
 import javax.annotation.PostConstruct;
 
+import com.example.infra.DynamicMyProp;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

@@ -1,18 +1,14 @@
 package com.example.demo;
 
-import java.util.Collections;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-
-import com.fasterxml.jackson.databind.deser.std.MapEntryDeserializer;
+import com.example.infra.BeanDefTest;
+import com.example.infra.DynamicMyPropRegistry;
+import com.example.infra.SpringValue;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -36,11 +32,14 @@ public class DemoApplication {
 	@Autowired
 	private MyProperties prop;
 
+	@Autowired
+	private BeanDefTest beanDefTest;
+
 	@GetMapping("/aa")
 	public String getA() {
 		// MyProperties prop = getProp();
 		//return prop.getBbb() + prop.getCcc() + prop.getDdd() + c.getCustomevalue1();
-		return c.getCustomevalue1() + c.getCustomevalue2() + c.getCustomevalue3();
+		return c.getCustomevalue1() + c.getCustomevalue2() + c.getCustomevalue3() + beanDefTest.getTest();
 	}
 
 

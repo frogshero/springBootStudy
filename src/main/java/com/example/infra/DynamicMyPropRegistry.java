@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.infra;
 
 
 import com.google.common.collect.LinkedListMultimap;

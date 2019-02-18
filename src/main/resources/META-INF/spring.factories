@@ -1,2 +1,2 @@
-org.springframework.context.ApplicationListener=com.example.demo.AppListener
-org.springframework.context.ApplicationContextInitializer=com.example.demo.AppContextInitializer
+org.springframework.context.ApplicationListener=com.example.infra.AppListener
+org.springframework.context.ApplicationContextInitializer=com.example.infra.AppContextInitializer
